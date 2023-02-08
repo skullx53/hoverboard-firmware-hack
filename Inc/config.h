@@ -46,16 +46,16 @@
 
 // ############################### SERIAL DEBUG ###############################
 
-#define DEBUG_SERIAL_USART3         // right sensor board cable, disable if I2C (nunchuck or lcd) is used!
-#define DEBUG_BAUD       115200     // UART baud rate
+//#define DEBUG_SERIAL_USART3         // right sensor board cable, disable if I2C (nunchuck or lcd) is used!
+//#define DEBUG_BAUD       115200     // UART baud rate
 //#define DEBUG_SERIAL_SERVOTERM      // Software for plotting graphs: https://github.com/STMBL/Servoterm-app
-#define DEBUG_SERIAL_ASCII          // "1:345 2:1337 3:0 4:0 5:0 6:0 7:0 8:0\r\n"
+//#define DEBUG_SERIAL_ASCII          // "1:345 2:1337 3:0 4:0 5:0 6:0 7:0 8:0\r\n"
 
 // ############################### INPUT ###############################
 
 // ###### CONTROL VIA UART (serial) ######
 //#define CONTROL_SERIAL_USART2       // left sensor board cable, disable if ADC or PPM is used!
-#define CONTROL_BAUD       19200    // control via usart from eg an Arduino or raspberry
+//#define CONTROL_BAUD       19200    // control via usart from eg an Arduino or raspberry
 // for Arduino, use void loop(void){ Serial.write((uint8_t *) &steer, sizeof(steer)); Serial.write((uint8_t *) &speed, sizeof(speed));delay(20); }
 
 // ###### CONTROL VIA RC REMOTE ######
@@ -65,7 +65,7 @@
 
 // ###### CONTROL VIA TWO POTENTIOMETERS ######
 // ADC-calibration to cover the full poti-range: connect potis to left sensor board cable (0 to 3.3V) (do NOT use the red 15V wire in the cable!). see <How to calibrate>. turn the potis to minimum position, write value 1 to ADC1_MIN and value 2 to ADC2_MIN. turn to maximum position and repeat it for ADC?_MAX. make, flash and test it.
-//#define CONTROL_ADC                 // use ADC as input. disable CONTROL_SERIAL_USART2!
+#define CONTROL_ADC                 // use ADC as input. disable CONTROL_SERIAL_USART2!
 #define ADC1_MIN 0                // min ADC1-value while poti at minimum-position (0 - 4095)
 #define ADC1_MAX 4095               // max ADC1-value while poti at maximum-position (0 - 4095)
 #define ADC2_MIN 0                // min ADC2-value while poti at minimum-position (0 - 4095)
@@ -77,8 +77,8 @@
 
 // ###### MOTOR TEST MODE ######
 // slowly move both wheels forward and backward, ignoring all inputs
-#define CONTROL_MOTOR_TEST
-#define CONTROL_MOTOR_TEST_MAX_SPEED 300         // sweep slowly from -MAX_SPEED to MAX_SPEED (0 - 1000)
+//#define CONTROL_MOTOR_TEST
+//#define CONTROL_MOTOR_TEST_MAX_SPEED 300         // sweep slowly from -MAX_SPEED to MAX_SPEED (0 - 1000)
 
 // ############################### DRIVING BEHAVIOR ###############################
 
